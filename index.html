@@ -2,7 +2,52 @@
 layout: default
 title: Arnav Ghosh
 ---
-<div class="blurb">
-	<h1>Hi there, I'm Hank Quinlan!</h1>
-	<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-</div><!-- /.blurb -->
+<div class="row"><!-- Profile -->
+	
+</div><!-- /.Profile -->
+
+<div class="row"><!-- Social Links -->
+	<div class="twelve columns contact">
+      <a href="https://www.linkedin.com/in/arnav-ghosh-9b877a106/" target="_blank"><img src="images/linkedin.png" /></a>
+      <a href="https://github.com/garnav" target="_blank"><img src="images/github.png" /></a>
+    </div>
+</div><!-- /Social Links -->
+
+<div class="row"><!-- Resume -->
+	<div class="twelve columns contact">
+      <a class="button" href="docs/Arnav_Ghosh_Resume.pdf" target="_blank">Resume</a>
+    </div>
+</div><!-- /Resume -->
+
+{% assign projects_per_row = 3 %}
+{% assign num_rows = {{site.projects.size | modulo:projects_per_row}} %}
+
+{% for r in (0 .. num_rows - 1) %}
+<div class="row"><!-- Row of Projects -->
+	{% for p in (0 .. projects_per_row - 1) %}
+	{% assign project = site.projects[(r *projects_per_row) + p] %}
+	<div class="three columns project-card"> TODO
+		<div class="row"><!-- Project Img -->
+			<div class="eleven columns project-img"> TODO
+				<img src="{{ project.img_url }}" />
+			</div>
+		</div>
+
+		<div class="row"><!-- Project Title -->
+			<div class="ten columns project-title"> TODO
+				<h3> {{ project.title }} </h3>
+			</div>
+		</div>
+
+		<div class="row"><!-- Project Links -->
+			<div class="ten columns"></div>
+			<div class="two columns">
+				<a href="{{ project.url }}"><img src="images/github.png" /></a>
+			</div>
+		</div>
+
+	</div>
+	{% endfor %}
+
+</div><!-- /Row of Projects -->
+{% endfor %}
