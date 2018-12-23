@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131331402-1"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+
+			  gtag('config', 'UA-131331402-1');
+			</script>
+
 			<meta charset="utf-8">
 			<title>{{ page.title }}</title>
 			<link rel="stylesheet" href="/css/normalize.css">
@@ -8,24 +18,10 @@
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
 		</head>
 		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	    		</ul>
-			</nav>
 			<div class="container">
 			
-			{{ page.content }}
+			{{ content }}
 			
 			</div><!-- /.container -->
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:ag983@cornell.edu">email</a></li>
-	        		<li><a href="https://github.com/garnav">github.com/garnav</a></li>
-				</ul>
-			</footer>
 		</body>
 	</html>

@@ -3,51 +3,93 @@ layout: default
 title: Arnav Ghosh
 ---
 <div class="row"><!-- Profile -->
+	<div class="twelve columns about">
+		<div class="seven columns about-info">
+			<h2>Arnav Ghosh</h2>
+			<p> I'm currently in my last year at Cornell University, working on a Bachelor's degree in Computer Science. Recently, I've been working on and exploring </p>
+			<div class="row"><!-- Social Links -->
+				<div class="seven columns contact">
+					<a href="mailto:ag983@cornell.edu" target="_blank"><img src="images/email.png" /></a>
+					<a href="https://www.linkedin.com/in/arnav-ghosh-9b877a106/" target="_blank"><img src="images/linkedin.png" /></a>
+					<a href="https://github.com/garnav" target="_blank"><img src="images/github.png" /></a>
+    			</div>
+
+    			<div class="five columns resume">
+      				<a class="button" href="docs/Arnav_Ghosh_Resume.pdf" target="_blank">Resume</a>
+    			</div>
+			</div><!-- /Social Links -->
+
+
+		</div>
+
+		<div class="five columns about-media">
+			<img src="images/potrait.png" />
+		</div>
+
+		</div>
 	
 </div><!-- /.Profile -->
 
-<div class="row"><!-- Social Links -->
+<!--<div class="row"> Social Links
 	<div class="twelve columns contact">
-      <a href="https://www.linkedin.com/in/arnav-ghosh-9b877a106/" target="_blank"><img src="images/linkedin.png" /></a>
-      <a href="https://github.com/garnav" target="_blank"><img src="images/github.png" /></a>
+		<a href="mailto:ag983@cornell.edu" target="_blank"><img src="images/email.png" /></a>
+		<a href="https://www.linkedin.com/in/arnav-ghosh-9b877a106/" target="_blank"><img src="images/linkedin.png" /></a>
+		<a href="https://github.com/garnav" target="_blank"><img src="images/github.png" /></a>
     </div>
-</div><!-- /Social Links -->
+</div> /Social Links -->
 
-<div class="row"><!-- Resume -->
+<!--<div class="row"> Resume
 	<div class="twelve columns contact">
       <a class="button" href="docs/Arnav_Ghosh_Resume.pdf" target="_blank">Resume</a>
     </div>
-</div><!-- /Resume -->
+</div> /Resume -->
+
+<div class="row"><!-- Project Section Title -->
+	<div class="twelve columns project-section-title">
+		<h4>Selected Projects</h4>
+	</div>
+</div><!-- /Project Section Title -->
+
 
 {% assign projects_per_row = 3 %}
-{% assign num_rows = {{site.data.projects.size | modulo:projects_per_row}} %}
+{% capture num_rows %} {{site.data.projects.size | modulo:projects_per_row}} {% endcapture %}
 
-{% for r in (0 .. num_rows - 1) %}
-<div class="row"><!-- Row of Projects -->
-	{% for p in (0 .. projects_per_row - 1) %}
-	{% assign project = site.data.projects[(r *projects_per_row) + p] %}
-	<div class="three columns project-card"> TODO
-		<div class="row"><!-- Project Img -->
-			<div class="eleven columns project-img"> TODO
-				<img src="{{ project.img_url }}" />
-			</div>
-		</div>
+{% for r in (0 .. num_rows) %}
+	<div class="row"><!-- Row of Projects -->
+		{% capture loop_2_end %} {{projects_per_row | minus: 1}} {% endcapture %}
+		{% assign loop_2_end = loop_2_end | plus: 0 %} <!-- Convert loop_2_end to int -->
+		{% for p in (0 .. loop_2_end) %}
+			{% capture idx %} {{r | times: projects_per_row}} {% endcapture %}
+			{% capture idx %} {{idx | plus: p}} {% endcapture %}
+			{% assign idx = idx | plus: 0 %} <!-- Convert idx to int -->
+			{% assign project = site.data.projects[idx] %}
 
-		<div class="row"><!-- Project Title -->
-			<div class="ten columns project-title"> TODO
-				<h3> {{ project.title }} </h3>
-			</div>
-		</div>
+			{% if p == loop_2_end %}
+				<div class="four columns project-card" style="border-right-style:none">
+			{% else %}
+				<div class="four columns project-card">
+			{% endif %}
+					<div class="row"><!-- Project Img -->
+						<div class="eleven columns project-img">
+							<img src="images/{{ project.img_name }}" />
+						</div>
+					</div>
 
-		<div class="row"><!-- Project Links -->
-			<div class="ten columns"></div>
-			<div class="two columns">
-				<a href="{{ project.url }}"><img src="images/github.png" /></a>
-			</div>
-		</div>
+					<div class="row"><!-- Project Title -->
+						<div class="eleven columns project-title">
+							<h5> {{ project.title }} </h5>
+						</div>
+					</div>
 
-	</div>
-	{% endfor %}
+					<div class="row"><!-- Project Links -->
+						<div class="eleven columns project-links">
+							<a href="docs/{{ project.filename }}" target="_blank"><img src="images/docs.png" /></a>
+							<a href="{{ project.source_url }}"><img src="images/github.png" /></a>
+						</div>
+					</div>
 
-</div><!-- /Row of Projects -->
+				</div>
+		{% endfor %}
+
+	</div><!-- /Row of Projects -->
 {% endfor %}

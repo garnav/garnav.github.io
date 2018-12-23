@@ -1,17 +1,47 @@
 .contact {
-    margin-top:1rem;
-    text-align: center;
+    margin-top:1em;
+    text-align: left;
 }
 
 .contact img {
-    margin:10px;
+    margin-right:10px;
+}
+
+.resume {
+    margin-top:1.5em;
+    text-align: right;
+}
+
+.about {
+    margin-top:2em;
+}
+
+.about-info {
+    text-align:left;
+}
+
+.about-media {
+    text-alight:right;
+}
+
+.about-media img{
+    width:75%;
+    height:200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-section-title{
+    text-align: left;
+    margin-top:1em;
 }
 
 .project-card {
     height:400px;
     border-right-style:dashed;
-    border-right-width:5px;
-    border-right-color:#6ed3cf;
+    border-right-width:1px;
+    margin-bottom:1rem;
 }
 
 .project-img{
@@ -26,5 +56,14 @@
 
 .project-title{
     text-align: left;
+    max-height: 150px;
+    height: 150px;
 }
 
+.project-links{
+    text-align: right;
+}
+
+.project-links img{
+    width: 20px;
+}

@@ -1,11 +1,14 @@
 - title: Evaluating RoI Comparison Methods to Improve Copy-Move Forgery Detection
-  img_url: NA
-  url: NA
+  filename: NA
+  img_name: forged.png
+  source_url: NA
 
-- title: ChromCNN - Chromatin State Annotation as an Image Segmentation Problem
-  img_url: NA
-  url: https://github.com/garnav/Chromatin-Semantic-Segmentation
+- title: "ChromCNN: Chromatin State Annotation as an Image Segmentation Problem"
+  filename: NA
+  img_name: chrom-cnn.png
+  source_url: https://github.com/garnav/Chromatin-Semantic-Segmentation
 
 - title: Identifying Duplicate Questions with Siamese Neural Networks
-  img_url: NA
-  url: NA
+  filename: NA
+  img_name: NA
+  source_url: https://github.com/CornellDataScience/DuQI
