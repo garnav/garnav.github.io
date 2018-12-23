@@ -20,12 +20,12 @@ title: Arnav Ghosh
 </div><!-- /Resume -->
 
 {% assign projects_per_row = 3 %}
-{% assign num_rows = {{site.projects.size | modulo:projects_per_row}} %}
+{% assign num_rows = {{site.data.projects.size | modulo:projects_per_row}} %}
 
 {% for r in (0 .. num_rows - 1) %}
 <div class="row"><!-- Row of Projects -->
 	{% for p in (0 .. projects_per_row - 1) %}
-	{% assign project = site.projects[(r *projects_per_row) + p] %}
+	{% assign project = site.data.projects[(r *projects_per_row) + p] %}
 	<div class="three columns project-card"> TODO
 		<div class="row"><!-- Project Img -->
 			<div class="eleven columns project-img"> TODO
