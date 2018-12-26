@@ -10,5 +10,5 @@
 
 - title: Identifying Duplicate Questions with Siamese Neural Networks
   filename: duqi.pdf
-  img_name: dup_questions.png 
+  img_name: dup_questions.PNG 
   source_url: https://github.com/CornellDataScience/DuQI
